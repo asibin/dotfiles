@@ -3,12 +3,6 @@
 My notes to creating vim / tmux configuration that will fit my own needs.
 Ideally this file will be empty by the time i finish my dotfiles setup.sh script.
 
-## TODO
-
-1. add rules to ignore for markdownlint
-2. finish setting up setup.sh
-3. Fix images that were migrated from Joplin
-
 ## Steps
 
 Install neovim
