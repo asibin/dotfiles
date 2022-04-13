@@ -61,6 +61,9 @@ Plug 'sjl/vitality.vim'
 " Navigate seamlessly between vim and tmux splits 
 Plug 'christoomey/vim-tmux-navigator'
 
+" Ansible language plugin
+Plug 'yaegassy/coc-ansible', {'do': 'yarn install --frozen-lockfile'}
+
 call plug#end()
 
 " --- Simple Vim config.
