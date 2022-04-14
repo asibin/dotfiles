@@ -46,7 +46,7 @@ reload vim and
 :CocInstall coc-prettier coc-html-css-support coc-html coc-eslint 
  coc-diagnostics coc-browser coc-yaml coc-tsserver coc-svg coc-sql
  coc-sh coc-pyright coc-pydocstring coc-markdownlint coc-json coc-go
- coc-docker coc-css coc-angular coc-ansible
+ coc-docker coc-css coc-angular @yaegassy/coc-ansible
 ```
 
 \#TODO: move these to init.vim and make them autoinstall
@@ -69,6 +69,10 @@ Default configurations per filetype are allowed
  but they can't cover all cases because we need to define program run command
  per project. Repo-local `.vimspector.json` file always takes presedence over
   more global files.
+  
+  There is also a great git repo that contains a lot of very useful examples for many different programming languages that you can reference: ([link](https://github.com/puremourning/vimspector))
+
+ 
 **TODO**: auto generate vimspector.json files through cookiecutter maybe?
 
 ## Vim unimpared bindings
@@ -77,3 +81,4 @@ Default configurations per filetype are allowed
 
 \[e and \]e are exchanging lines up and down
 \[space and \]space are adding blank lines up and down
+
