@@ -161,6 +161,9 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " --- Coc ---
 
+" Install all language servers automatically
+let g:coc_global_extensions = ['coc-prettier', 'coc-html-css-support', 'coc-html', 'coc-eslint', 'coc-diagnostic', 'coc-browser', 'coc-yaml', 'coc-tsserver', 'coc-svg', 'coc-sql', 'coc-sh', 'coc-pyright', 'coc-pydocstring', 'coc-markdownlint', 'coc-json', 'coc-go', 'coc-docker', 'coc-css', 'coc-angular', '@yaegassy/coc-ansible', 'coc-git']
+
 " Map tab and shift tab to next/previous completion 
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :

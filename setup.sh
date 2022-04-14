@@ -119,7 +119,6 @@ pip3 install pynvim
 pip install autopep8 pep8 flake8
 pip3 install autopep8 pep8 flake8
 
-
 printf "${LBL}Setup tmux configs${NC}\n"
 ln -sf --backup ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
@@ -130,7 +129,7 @@ printf "${LBL}--- Setup DONE ---${NC}\n\n"
 printf "${LGR}
 In order to install all neovim plugins run\n\n
 
-nvim -c ':PlugInstall | :CocInstall | :VimspectorInstall'\n
+nvim -c ':PlugInstall | :VimspectorInstall'\n
 
 and restart vim after.
 ${NC}"
