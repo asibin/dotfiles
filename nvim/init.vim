@@ -274,18 +274,18 @@ nnoremap <silent> <leader>f :call FZFOpen(":Ag")<CR>
 " --- TERMINAL ---
 
 " Bindings
-nnoremap <c-t> :call OpenTerminal()<CR>
+" nnoremap <c-t> :call OpenTerminal()<CR>
 
 " turn terminal to normal mode with escape
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " Open terminal with ZSH shell
-function! OpenTerminal()
-  split term://zsh
-  resize 20
-endfunction
+" function! OpenTerminal()
+  " split term://zsh
+  " resize 20
+" endfunction
 
 
 " --- ctrlp ---
