@@ -1,0 +1,20 @@
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+	editor = nvim
+
+[user]
+	name = Sibin Arsenijević
+	email = sibin.arsenijevic@united.cloud
+
+[push]
+	default = simple
+
+[init]
+	defaultBranch = master
+
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
