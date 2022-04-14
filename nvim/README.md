@@ -49,8 +49,6 @@ reload vim and
  coc-docker coc-css coc-angular @yaegassy/coc-ansible
 ```
 
-
-
 \#TODO: move these to init.vim and make them autoinstall
 
 ## BETA: Install gadgets for Vimspector ([debugger](https://github.com/puremourning/vimspector))
