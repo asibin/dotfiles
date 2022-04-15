@@ -129,10 +129,15 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
 fi
 
 printf "${LBL}Setup Silver Searcher's .ignore file${NC}\n"
-ln -sf --backup ~/.dotfiles/.ignore ~/.ignore || true
+ln -sf --backup ~/.dotfiles/.ignore ~/.ignore
 
 printf "${LBL}Setup hammerspoon config${NC}\n"
-ln -s ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
+ln -sf --backup ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
+
+if [ ! -d ~/.hammerspoon/Spoons/PublicIP.spoon ]; then
+  printf "${LBL}Add PublicIP plugin for hammerspoon${NC}"
+  git clone https://github.com/asibin/hammerspoon-spoon-PublicIP.git ~/.hammerspoon/Spoons/PublicIP.spoon
+fi
 
 printf "${LBL}--- Setup DONE ---${NC}\n\n"
 printf "${LGR}
