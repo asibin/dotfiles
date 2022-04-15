@@ -61,6 +61,7 @@ apps=(
   "enpass"
   "font-hack-nerd-font"
   "google-chrome"
+  "hammerspoon"
   "hma-pro-vpn"
   "intellij-idea"
   "intune-company-portal"
@@ -129,6 +130,9 @@ fi
 
 printf "${LBL}Setup Silver Searcher's .ignore file${NC}\n"
 ln -sf --backup ~/.dotfiles/.ignore ~/.ignore || true
+
+printf "${LBL}Setup hammerspoon config${NC}\n"
+ln -s ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
 
 printf "${LBL}--- Setup DONE ---${NC}\n\n"
 printf "${LGR}
