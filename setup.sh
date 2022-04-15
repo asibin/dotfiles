@@ -122,6 +122,11 @@ pip3 install autopep8 pep8 flake8
 printf "${LBL}Setup tmux configs${NC}\n"
 ln -sf --backup ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+  printf "${LBL}Installing tmux plugin manager...${NC}\n"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 printf "${LBL}Setup Silver Searcher's .ignore file${NC}\n"
 ln -sf --backup ~/.dotfiles/.ignore ~/.ignore || true
 
