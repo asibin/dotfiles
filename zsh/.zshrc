@@ -14,16 +14,16 @@ if ! zgen saved; then
     zgen oh-my-zsh
 
     # plugins
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/docker
-    zgen oh-my-zsh plugins/httpie
-    zgen oh-my-zsh plugins/colorize
     zgen oh-my-zsh plugins/wd
+    zgen oh-my-zsh plugins/colorize
     zgen load ohmyzsh/ohmyzsh plugins/zsh-navigation-tools
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-autosuggestions
 
     # completions
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/docker
+    zgen oh-my-zsh plugins/httpie
     zgen load zsh-users/zsh-completions src
 
     # theme
