@@ -24,6 +24,7 @@ printf "${LBL}Brew is installed. Continuing...${NC}\n"
 
 tools=(
   "cookiecutter"
+  "colima"
   "dive"
   "docker"
   "git-lfs"
