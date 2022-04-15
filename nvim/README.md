@@ -1,10 +1,6 @@
 # NeoVim notes
 
-My notes to creating vim / tmux configuration that will fit my own needs.
-
-## Notes
-
-### Vimspector
+## Vimspector
 
 Make sure to disable F11 to show desktop in MacOS and invert F keys to their
  standard roles in case you want to use **HUMAN** bindings for Vimspector.
