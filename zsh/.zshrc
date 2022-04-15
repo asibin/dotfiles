@@ -16,7 +16,6 @@ if ! zgen saved; then
     # plugins
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/docker
-    # zgen oh-my-zsh plugins/helm
     zgen oh-my-zsh plugins/httpie
     zgen oh-my-zsh plugins/colorize
     zgen oh-my-zsh plugins/wd
@@ -28,7 +27,6 @@ if ! zgen saved; then
     zgen load zsh-users/zsh-completions src
 
     # theme
-    # zgen oh-my-zsh themes/arrow
     zgen load romkatv/powerlevel10k powerlevel10k
 
     # save all to init script
