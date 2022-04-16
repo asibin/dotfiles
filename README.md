@@ -47,8 +47,9 @@ Note that this repo is probably not usable out-of-the-box
   - custom starify MRU list for workspace folders
 - Git config with global .gitignore
 - iterm2 customized one-dark theme
-- Hammerspoon & Karabiner configs
+- Hammerspoon & Karabiner configs with PublicIP spoon
 - shell script to setup everything
+- The Silver Searcher with ignore file
 
 ## Usage
 
