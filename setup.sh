@@ -23,10 +23,12 @@ fi
 printf "${LBL}Brew is installed. Continuing...${NC}\n"
 
 tools=(
+  "bat"
   "cookiecutter"
   "colima"
   "dive"
   "docker"
+  "git-delta"
   "git-lfs"
   "helm"
   "htop"
@@ -43,6 +45,7 @@ tools=(
   "node@${NODEJS_VERSION}"
   "pwgen"
   "python@${PYTHON_VERSION}"
+  "ripgrep"
   "sqlite"
   "the_silver_searcher"
   "tldr"

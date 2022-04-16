@@ -2,10 +2,23 @@
 	autocrlf = input
 	excludesfile = ~/.gitignore
 	editor = nvim
+	pager = delta
 
 [user]
 	name = Sibin Arsenijević
 	email = sibin.arsenijevic@united.cloud
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
 
 [push]
 	default = simple
