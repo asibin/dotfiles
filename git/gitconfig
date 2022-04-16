@@ -4,9 +4,11 @@
 	editor = nvim
 	pager = delta
 
-[user]
-	name = Sibin Arsenijević
-	email = sibin.arsenijevic@united.cloud
+[includeIf "gitdir:~/workspace/"]
+	path = ~/.gitconfig-uc
+
+[includeIf "gitdir:~/workspace/personal/"]
+	path = ~/.gitconfig-private-github
 
 [interactive]
 	diffFilter = delta --color-only

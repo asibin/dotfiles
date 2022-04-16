@@ -54,7 +54,7 @@ tools=(
 
 printf "${BLUE}Installing brew tools${NOCOLOR}\n"
 printf "${LIGHTGRAY}brew install ${tools[@]}${NOCOLOR}\n"
-brew install ${tools[@]}
+# brew install ${tools[@]}
 
 apps=(
   "alfred"
@@ -90,13 +90,13 @@ apps=(
 )
 
 printf "${BLUE}Add casks for brew${NOCOLOR}\n" 
-brew tap homebrew/cask
-brew tap homebrew/cask-fonts
+# brew tap homebrew/cask
+# brew tap homebrew/cask-fonts
 printf "${BLUE}Add casks for brew: ${NOCOLOR}${GREEN}OK${NC}\n" 
 
 printf "${BLUE}Installing MacOS apps${NOCOLOR}\n"
 printf "${LIGHTGRAY}brew install --cask ${tools[@]}${NOCOLOR}\n"
-brew install --cask "${apps[@]}"
+# brew install --cask "${apps[@]}"
 printf "${BLUE}Installing MacOS apps: ${NOCOLOR}${GREEN}OK${NC}\n"
 
 # No brew formulae
@@ -157,6 +157,20 @@ if [ ! -d ~/.hammerspoon/Spoons/PublicIP.spoon ]; then
   git clone https://github.com/asibin/hammerspoon-spoon-PublicIP.git ~/.hammerspoon/Spoons/PublicIP.spoon
 fi
 printf "${BLUE}Setup hammerspoon config: ${NOCOLOR}${GREEN}OK${NC}\n"
+
+
+# Git configs
+printf "${BLUE}Setup git configuration${NOCOLOR}\n"
+ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/git/gitignore ~/.gitignore
+
+if [ -f ~/.dotfiles/git/gitconfig-private-github ]; then
+  ln -sf ~/.dotfiles/git/gitconfig-private-github ~/.gitconfig-private-github
+fi
+
+if [ -f ~/.dotfiles/git/gitconfig-uc ]; then
+  ln -sf ~/.dotfiles/git/gitconfig-uc ~/.gitconfig-uc
+fi
 
 
 printf "\n${GREEN}--- Setup DONE ---${NOCOLOR}\n"
