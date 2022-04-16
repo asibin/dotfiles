@@ -1,6 +1,6 @@
 # Dotfiles
 
-.dotfiles and script for setting up new MacOS machine. 
+.dotfiles and script for setting up new MacOS machine.
 
 ## NOTE
 
@@ -9,13 +9,15 @@ Note that this repo is probably not usable out-of-the-box
  This repo is public in order to provide examples for
  others that are creating their own dotfiles repos
  as I have created these by combining multiple sources
- (other people's dotfiles, multiple blogs, 
+ (other people's dotfiles, multiple blogs,
  documentation, etc.) and tuning them to my needs.
 
 ### Assumptions
+
 - ~/workspace as workspace folder
 - neovim's startify workspace MRU folders function is hardcoded to ~/workspace
-- Apps that are installed are apps that is use or HAVE to use (i am looking at you Skype)
+- Apps that are installed are apps that is use or HAVE to use
+ (i am looking at you Skype)
 - aliases are my own
 
 ## What is included
