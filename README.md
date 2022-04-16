@@ -16,8 +16,8 @@ Note that this repo is probably not usable out-of-the-box
 
 - ~/workspace as workspace folder
 - neovim's startify workspace MRU folders function is hardcoded to ~/workspace
-- Apps that are installed are apps that is use or HAVE to use
- (i am looking at you Skype)
+- Apps that are installed are apps that I use or HAVE to use
+ (I am looking at you Skype)
 - aliases are my own
 
 ## What is included
