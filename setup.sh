@@ -69,6 +69,7 @@ apps=(
   "intune-company-portal"
   "iterm2"
   "joplin"
+  "karabiner-elements"
   "keepassx"
   "microsoft-office"
   "obs"
