@@ -101,4 +101,4 @@ cd ~/.dotfiles
 
 - TAB sometimes throws error in NeoVim when there are no completions
  and you press TAB multiple times, will investigate
-
+- Karabiner symlink gets overwritten by Karabiner. Needs more research.
