@@ -21,4 +21,8 @@ n:monitorKeys("State:/Network/Service/.*/IPv4", true)
 n:setCallback(networkChangedCallback)
 n:start()
 
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+  hs.reload()
+end)
+hs.alert.show("Config loaded")
 
