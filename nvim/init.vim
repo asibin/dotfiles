@@ -268,23 +268,6 @@ nnoremap <silent> <leader>g :call FZFOpen(":GFiles")<CR>
 nnoremap <silent> <leader>f :call FZFOpen(":Ag")<CR>
 
 
-" --- TERMINAL ---
-
-" Bindings
-" nnoremap <c-t> :call OpenTerminal()<CR>
-
-" turn terminal to normal mode with escape
-" tnoremap <Esc> <C-\><C-n>
-" start terminal in insert mode
-" au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-
-" Open terminal with ZSH shell
-" function! OpenTerminal()
-  " split term://zsh
-  " resize 20
-" endfunction
-
-
 " --- The Silver Searcher (ag) ---
 
 " Is 'ag' available?
