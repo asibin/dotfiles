@@ -1,26 +1,24 @@
 #!/usr/bin/env bash
 
-# WARNING: THIS SCRIPT IS WORK IN PROGRESS
-# PLEASE DO NOT RUN THIS SCRIPT AS IT IS UNTESTED
-
 PYTHON_VERSION="3.10"
 NODEJS_VERSION="16"
 
 set -e
 
-RED='\034[0;31m'
-LBL='\033[1;34m'
-LGR='\033[1;32m'
-NC='\033[0m'
+RED='\e[1;31m'
+BLUE='\e[1;34m'
+GREEN='\e[1;32m'
+LIGHTGRAY='\e[1;37m'
+NOCOLOR='\e[0m'
 
 
-printf "${LBL}Checking if brew is installed...${NC}\n"
+printf "${BLUE}Checking if homebrew is installed${NOCOLOR}\n"
 if ! command -v brew &> /dev/null
 then
-  printf "${LGR}Homebrew not found, installing...${NC}\n"
+  printf "${GREEN}Homebrew not found, installing...${NOCOLOR}\n"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
-printf "${LBL}Brew is installed. Continuing...${NC}\n"
+printf "${BLUE}Checking if homebrew is installed: ${NOCOLOR}${GREEN}OK${NC}\n"
 
 tools=(
   "bat"
@@ -54,8 +52,8 @@ tools=(
   "youtube-dl"
 )
 
-printf "${LBL}--- Installing brew tools ---${NC}\n"
-printf "${LGR}brew install ${tools[@]}${NC}\n"
+printf "${BLUE}Installing brew tools${NOCOLOR}\n"
+printf "${LIGHTGRAY}brew install ${tools[@]}${NOCOLOR}\n"
 brew install ${tools[@]}
 
 apps=(
@@ -83,71 +81,81 @@ apps=(
   "slack"
   "spotify"
   "steam"
-  "teamviewer"
-  "telegram"
+  "teamviewer" "telegram"
   "tunnelblick"
   "vlc"
   "webex"
   "wireshark"
 )
 
-printf "${LBL}Add casks for brew${NC}\n" 
+printf "${BLUE}Add casks for brew${NOCOLOR}\n" 
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
+printf "${BLUE}Add casks for brew: ${NOCOLOR}${GREEN}OK${NC}\n" 
 
-printf "${LBL}--- Installing MacOS apps ---${NC}\n"
-printf "${LGR}brew install --cask ${tools[@]}${NC}\n"
+printf "${BLUE}Installing MacOS apps${NOCOLOR}\n"
+printf "${LIGHTGRAY}brew install --cask ${tools[@]}${NOCOLOR}\n"
 brew install --cask "${apps[@]}"
+printf "${BLUE}Installing MacOS apps: ${NOCOLOR}${GREEN}OK${NC}\n"
 
 # No brew formulae
 # postgres app, magnet app, amphetamine app, notability
 
-printf "${LBL}Setup zshrc plugins${NC}\n"
-ln -sf --backup ~/.dotfiles/zsh/.zshrc ~/.zshrc
-ln -sf --backup ~/.dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 
-printf "${LBL}Setup vim / neovim configs${NC}\n"
-ln -sf --backup ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim 
-ln -sf --backup ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json 
-ln -sf --backup ~/.dotfiles/nvim/init.vim ~/.vimrc
+# ZSHRC
+printf "${BLUE}Setup zshrc plugins${NOCOLOR}\n"
+ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
+printf "${BLUE}Setup zshrc plugins: ${NOCOLOR}${GREEN}OK${NC}\n"
+
+
+# NEOVIM
+printf "${BLUE}Setup vim / neovim configs${NOCOLOR}\n"
+ln -sf ~/.dotfiles/nvim/init.vim ~/.config/nvim/init.vim 
+ln -sf ~/.dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json 
+ln -sf ~/.dotfiles/nvim/init.vim ~/.vimrc
 
 if [ ! -f ~/.vim/autoload/plug.vim ]; then
-  printf "${LBL}Installing vim-plug...${NC}\n"
+  printf "${BLUE}Installing vim-plug...${NOCOLOR}\n"
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-printf "${LBL}Setup pynvim for neovim extensions that require python${NC}\n"
-pip install pynvim
-pip3 install pynvim
+printf "${BLUE}Setup pynvim for neovim extensions that require python${NOCOLOR}\n"
+pip3 install pynvim autopep8 pep8 flake8
 
-pip install autopep8 pep8 flake8
-pip3 install autopep8 pep8 flake8
+printf "${BLUE}Setup vim / neovim configs: ${NOCOLOR}${GREEN}OK${NC}\n"
 
-printf "${LBL}Setup tmux configs${NC}\n"
-ln -sf --backup ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
+printf "${BLUE}Installing vim / vimspector plugins${NOCOLOR}\n"
+nvim +PlugInstall +VimspectorInstall +qa 
+printf "${BLUE}Setup vim / neovim configs: ${NOCOLOR}${GREEN}OK${NC}\n"
+
+
+# TMUX
+printf "${BLUE}Setup tmux${NOCOLOR}\n"
+ln -sf ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf
 
 if [ ! -d ~/.tmux/plugins/tpm ]; then
-  printf "${LBL}Installing tmux plugin manager...${NC}\n"
+  printf "${BLUE}Installing tmux plugin manager...${NOCOLOR}\n"
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
+printf "${BLUE}Setup tmux: ${NOCOLOR}${GREEN}OK${NC}\n"
 
-printf "${LBL}Setup Silver Searcher's .ignore file${NC}\n"
-ln -sf --backup ~/.dotfiles/.ignore ~/.ignore
 
-printf "${LBL}Setup hammerspoon config${NC}\n"
-ln -sf --backup ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
+# SILVER SEARCHER
+printf "${BLUE}Setup Silver Searcher's .ignore file${NOCOLOR}\n"
+ln -sf ~/.dotfiles/.ignore ~/.ignore
+printf "${BLUE}Setup Silver Searcher's .ignore file: ${NOCOLOR}${GREEN}OK${NC}\n"
+
+
+# HAMMERSPOON
+printf "${BLUE}Setup hammerspoon config${NOCOLOR}\n"
+ln -sf ~/.dotfiles/hammerspoon/init.lua ~/.hammerspoon/init.lua
 
 if [ ! -d ~/.hammerspoon/Spoons/PublicIP.spoon ]; then
-  printf "${LBL}Add PublicIP plugin for hammerspoon${NC}"
+  printf "${BLUE}Add PublicIP plugin for hammerspoon${NOCOLOR}"
   git clone https://github.com/asibin/hammerspoon-spoon-PublicIP.git ~/.hammerspoon/Spoons/PublicIP.spoon
 fi
+printf "${BLUE}Setup hammerspoon config: ${NOCOLOR}${GREEN}OK${NC}\n"
 
-printf "${LBL}--- Setup DONE ---${NC}\n\n"
-printf "${LGR}
-In order to install all neovim plugins run\n\n
-
-nvim -c ':PlugInstall | :VimspectorInstall'\n
-
-and restart vim after.
-${NC}"
+printf "\n${GREEN}--- Setup DONE ---${NOCOLOR}\n"
