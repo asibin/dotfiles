@@ -9,6 +9,7 @@ app_bindings = {
   { 's', 'Spotify' },
   { 'd', 'IntelliJ IDEA' },
   { 'f', 'Finder' },
+  { 'j', 'Joplin' },
   { 'c', 'Telegram' },
   { 'm', 'Microsoft Outlook' },
 }
