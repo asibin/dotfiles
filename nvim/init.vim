@@ -242,6 +242,9 @@ let NERDTreeShowHidden=1 " Show or hide hidden files
 let g:NERDTreeIgnore=['\.git$[[dir]]', 'node_modules$[[dir]]', '\.nyc_output$[[dir]]', '__pycache__'] " But still ignore some normally not needed files
 let NERDTreeRespectWildIgnore=1 " Ignore the files in our 'wildignore' settings (see higher up in the file)
 
+" Close NERDTree when file is opened
+let NERDTreeQuitOnOpen=1
+
 " Get nerdtree to use nerdfonts
 let g:NERDTreeGitStatusUseNerdFonts = 1
 
