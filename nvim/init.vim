@@ -49,9 +49,6 @@ Plug 'junegunn/fzf.vim'
 " Add easy language aware commenting
 Plug 'preservim/nerdcommenter'
 
-" Ctrl + P to open anything
-Plug 'kien/ctrlp.vim'
-
 " More usefull start screen
 Plug 'mhinz/vim-startify'
 
@@ -84,10 +81,10 @@ filetype plugin on
 :autocmd InsertLeave * set nocul
 
 " Break bad habits - no arrow keys!
-" noremap <Up> <NOP>
-" noremap <Down> <NOP>
-" noremap <Left> <NOP>
-" noremap <Right> <NOP>
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
 
 " Relative numbers 
 set number relativenumber
@@ -288,19 +285,6 @@ nnoremap <silent> <leader>f :call FZFOpen(":Ag")<CR>
 " endfunction
 
 
-" --- ctrlp ---
-
-" Config
-" let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-" let g:ctrlp_show_hidden = 1
-
-" let g:ctrlp_working_path_mode = 'ra'
-
-" Refresh nerdtree and ctrlp. DISABLED not to clash with <leader>rn 
-" nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>:CtrlPClearCache<cr>
-
-
 " --- The Silver Searcher (ag) ---
 
 " Is 'ag' available?
@@ -310,7 +294,7 @@ if executable('ag')
 
     " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore.
     " let g:ctrlp_user_command = 'ag %s -l --nocolor -g --path-to-ignore ~/.ignore""'
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --path-to-ignore ~/.ignore -g ""'
+    " let g:ctrlp_user_command = 'ag %s -l --nocolor --path-to-ignore ~/.ignore -g ""'
     
     " Check if we can disable caching
    " let g:ctrlp_use_caching = 0
