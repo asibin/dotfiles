@@ -6,12 +6,13 @@ app_bindings = {
   { 'w', 'Safari' },
   { 't', 'Postman' },
   { 'p', 'Enpass' },
-  { 's', 'Spotify' },
+  { 'm', 'Spotify' },
+  { 's', 'Slack' },
   { 'd', 'IntelliJ IDEA' },
   { 'f', 'Finder' },
-  { 'j', 'Joplin' },
+  { 'j', 'Joplin.app' },
   { 'c', 'Telegram' },
-  { 'm', 'Microsoft Outlook' },
+  { 'o', 'Microsoft Outlook' },
 }
 
 for i, app in ipairs(app_bindings) do
@@ -20,11 +21,11 @@ for i, app in ipairs(app_bindings) do
   end)
 end
 
--- Load PublicIP spoon and watch interfaces
+-- Load PublicIP spoon and watch IPv4 address changes
 hs.loadSpoon("PublicIP")
 
 function networkChangedCallback(store, keys)
-    hs.timer.doAfter(10, function()
+  hs.timer.doAfter(10, function()
     spoon.PublicIP.refreshIP()
   end)
 end
