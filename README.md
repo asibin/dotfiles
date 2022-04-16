@@ -53,6 +53,30 @@ Note that this repo is probably not usable out-of-the-box
 - shell script to setup everything
 - The Silver Searcher with ignore file
 
+## Neovim COC included language servers
+
+- '@yaegassy/coc-ansible'
+- 'coc-angular'
+- 'coc-browser'
+- 'coc-css'
+- 'coc-diagnostic'
+- 'coc-docker'
+- 'coc-eslint'
+- 'coc-git'
+- 'coc-go'
+- 'coc-html'
+- 'coc-html-css-support'
+- 'coc-json'
+- 'coc-markdownlint'
+- 'coc-prettier'
+- 'coc-pydocstring'
+- 'coc-pyright'
+- 'coc-sh'
+- 'coc-sql'
+- 'coc-svg'
+- 'coc-tsserver'
+- 'coc-yaml'
+
 ## Usage
 
 Clone and run setup.sh
