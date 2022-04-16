@@ -1,13 +1,25 @@
-app_binds = {"cmd", "alt", "ctrl"}
+hyper_keys = {"cmd", "alt", "ctrl", "shift"}
 
-hs.hotkey.bind(app_binds, "w", function()
-  hs.application.open('Safari')
-end)
+-- Application launchers
+app_bindings = {
+  { 'q', 'iTerm' },
+  { 'w', 'Safari' },
+  { 't', 'Postman' },
+  { 'p', 'Enpass' },
+  { 's', 'Spotify' },
+  { 'd', 'IntelliJ IDEA' },
+  { 'f', 'Finder' },
+  { 'c', 'Telegram' },
+  { 'm', 'Microsoft Outlook' },
+}
 
-hs.hotkey.bind(app_binds, "t", function()
-  hs.application.open('/Applications/iTerm.app')
-end)
+for i, app in ipairs(app_bindings) do
+  hs.hotkey.bind(hyper_keys, app[1], function()
+    hs.application.launchOrFocus(app[2])
+  end)
+end
 
+-- Load PublicIP spoon and watch interfaces
 hs.loadSpoon("PublicIP")
 
 function networkChangedCallback(store, keys)
@@ -21,7 +33,9 @@ n:monitorKeys("State:/Network/Service/.*/IPv4", true)
 n:setCallback(networkChangedCallback)
 n:start()
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
+
+-- Bind hyper_keys + R to reload Hammerspoon config
+hs.hotkey.bind(hyper_keys, "R", function()
   hs.reload()
 end)
 hs.alert.show("Config loaded")
