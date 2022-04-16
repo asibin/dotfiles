@@ -77,6 +77,13 @@ Note that this repo is probably not usable out-of-the-box
 - 'coc-tsserver'
 - 'coc-yaml'
 
+## Karabiner setup
+
+- Remap of `non_us_backslash` (§ ±) key to `grave_accent_and_tilde` (\` ~) on
+ Mac's built-in keyboard (for German / EU style keyboard)
+- Binding `CAPS LOCK` to `COMMAND + CTRL + OPTION + SHIFT` to be used as HYPER
+ key for Hammerspoon
+
 ## Usage
 
 Clone and run setup.sh

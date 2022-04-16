@@ -159,8 +159,14 @@ fi
 printf "${BLUE}Setup hammerspoon config: ${NOCOLOR}${GREEN}OK${NC}\n"
 
 
-# Git configs
-printf "${BLUE}Setup git configuration${NOCOLOR}\n"
+# KARABINER
+printf "${BLUE}Karabiner setup${NOCOLOR}\n"
+ln -sf ~/.dotfiles/karabiner/karabiner.json ~/.config/karabiner/karabiner.json
+printf "${BLUE}Karabiner setup: ${NOCOLOR}${GREEN}OK${NC}\n"
+
+
+# GIT
+printf "${BLUE}Setup Git configuration${NOCOLOR}\n"
 ln -sf ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/git/gitignore ~/.gitignore
 
@@ -171,6 +177,7 @@ fi
 if [ -f ~/.dotfiles/git/gitconfig-uc ]; then
   ln -sf ~/.dotfiles/git/gitconfig-uc ~/.gitconfig-uc
 fi
+printf "${BLUE}Setup Git configuration: ${NOCOLOR}${GREEN}OK${NC}\n"
 
 
 printf "\n${GREEN}--- Setup DONE ---${NOCOLOR}\n"
