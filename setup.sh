@@ -124,7 +124,6 @@ fi
 
 printf "${BLUE}Setup pynvim for neovim extensions that require python${NOCOLOR}\n"
 pip3 install pynvim autopep8 pep8 flake8
-
 printf "${BLUE}Setup vim / neovim configs: ${NOCOLOR}${GREEN}OK${NC}\n"
 
 printf "${BLUE}Installing vim / vimspector plugins${NOCOLOR}\n"
@@ -158,5 +157,6 @@ if [ ! -d ~/.hammerspoon/Spoons/PublicIP.spoon ]; then
   git clone https://github.com/asibin/hammerspoon-spoon-PublicIP.git ~/.hammerspoon/Spoons/PublicIP.spoon
 fi
 printf "${BLUE}Setup hammerspoon config: ${NOCOLOR}${GREEN}OK${NC}\n"
+
 
 printf "\n${GREEN}--- Setup DONE ---${NOCOLOR}\n"
