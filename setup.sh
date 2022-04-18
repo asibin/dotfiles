@@ -42,6 +42,7 @@ tools=(
   "nmap"
   "node@${NODEJS_VERSION}"
   "pwgen"
+  "pyenv"
   "python@${PYTHON_VERSION}"
   "ripgrep"
   "sqlite"

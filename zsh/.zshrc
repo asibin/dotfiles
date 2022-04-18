@@ -40,18 +40,28 @@ fi
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 # Virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=~/.pyenv/shims/python3
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Postgresql binary
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
-export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
 
 # Node 16 binary
 export PATH="/usr/local/opt/node@16/bin:$PATH"
+
+# Pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+fi
 
 # Kubectl completion
 source <(kubectl completion zsh)
