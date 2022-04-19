@@ -71,7 +71,13 @@ set wildmenu        " nicer tab completion
 set updatetime=300  " lower updatetime to make things snappier
 " set cmdheight=2     " Better display for messages 
 set shortmess+=c    " don't give ins-completion-menu messages.
+
+" Enable plugins per filetype
 filetype plugin on
+
+" Enable smartcase
+:set ignorecase
+:set smartcase
 
 " Ctrl + c sends esc
 :ino <C-c> <Esc>

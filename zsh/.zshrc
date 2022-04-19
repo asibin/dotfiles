@@ -19,6 +19,7 @@ if ! zgen saved; then
     zgen load ohmyzsh/ohmyzsh plugins/zsh-navigation-tools
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-autosuggestions
+    zgen load ohmyzsh/ohmyzsh plugins/virtualenvwrapper
 
     # completions
     zgen oh-my-zsh plugins/git
