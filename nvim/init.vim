@@ -81,10 +81,10 @@ filetype plugin on
 :autocmd InsertLeave * set nocul
 
 " Break bad habits - no arrow keys!
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+" noremap <Up> <NOP>
+" noremap <Down> <NOP>
+" noremap <Left> <NOP>
+" noremap <Right> <NOP>
 
 " Relative numbers 
 set number relativenumber
@@ -97,7 +97,8 @@ augroup auto_toggle_relative_linenumbers
     autocmd InsertLeave * :set number relativenumber
 augroup end
 
-set hlsearch        " highlight matches
+" Highlight matches
+set hlsearch        
 
 " Once we are done finding things and we start to edit we don't need highlights
 augroup disable_seach_highlights_on_insert
