@@ -19,7 +19,6 @@ if ! zgen saved; then
     zgen load ohmyzsh/ohmyzsh plugins/zsh-navigation-tools
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-autosuggestions
-    zgen load ohmyzsh/ohmyzsh plugins/virtualenvwrapper
 
     # completions
     zgen oh-my-zsh plugins/git
@@ -53,7 +52,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # Postgresql binary
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
-# export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 # Node 16 binary
 export PATH="/usr/local/opt/node@16/bin:$PATH"
