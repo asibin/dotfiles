@@ -50,7 +50,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdcommenter'
 
 " More usefull start screen
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 
 " Nicer cursor, tmux interactions.
 Plug 'sjl/vitality.vim'
@@ -312,17 +312,17 @@ let g:NERDSpaceDelims = 1
 " --- Startify ---
 
 " Set custom header instead of random quotePlace to add custom header if wanted, each list item is one lines 
-let g:startify_custom_header = [
-\ ' ___________  ______    _______       ___      ___  __     ___      ___ ',
-\ '("     _   ")/    " \  |   __ "\     |"  \    /"  ||" \   |"  \    /"  |',
-\ ' )__/  \\__/// ____  \ (. |__) :)     \   \  //  / ||  |   \   \  //   |',
-\ '    \\_ /  /  /    ) :)|:  ____/       \\  \/. ./  |:  |   /\\  \/.    |',
-\ '    |.  | (: (____/ // (|  /            \.    //   |.  |  |: \.        |',
-\ '    \:  |  \        / /|__/ \            \\   /    /\  |\ |.  \    /:  |',
-\ '     \__|   \"_____/ (_______)            \__/    (__\_|_)|___|\__/|___|',
-\ '                                                                        ',
-\ '    I  f e e l  t h e  n e e d  -  t h e  n e e d  f o r  s p e e d!    ',
-\ ]                                                                       
+" let g:startify_custom_header = [
+" \ ' ___________  ______    _______       ___      ___  __     ___      ___ ',
+" \ '(      _    )/      \  |   __  \     |   \    /   ||  \   |   \    /   |',
+" \ ' )__/  \\__/// ____  \ (. |__) :)     \   \  //  / ||  |   \   \  //   |',
+" \ '    \\_ /  /  /    ) :)|:  ____/       \\  \/. ./  |:  |   /\\  \/.    |',
+" \ '    |.  | (: (____/ // (|  /            \.    //   |.  |  |: \.        |',
+" \ '    \:  |  \        / /|__/ \            \\   /    /\  |\ |.  \    /:  |',
+" \ '     \__|   \"_____/ (_______)            \__/    (__\_|_)|___|\__/|___|',
+" \ '                                                                        ',
+" \ '    I  f e e l  t h e  n e e d  -  t h e  n e e d  f o r  s p e e d!    ',
+" \ ]                                                                       
 
 
 " When opening file cd into that directory or vcs root
@@ -330,28 +330,28 @@ let g:startify_custom_header = [
 " let g:startify_change_to_vcs_root = 1
 
 " Make indices start at 1 instead of 0
-let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
+" let g:startify_custom_indices = map(range(1,100), 'string(v:val)')
 
 " Get list of folders in ~/workspace folder by recency 
-function s:workspace_mru()
-    let recent_folders = systemlist("ls -dt ~/workspace/* | head -10")
+" function s:workspace_mru()
+    " let recent_folders = systemlist("ls -dt ~/workspace/* | head -10")
     
-    let results = []
+    " let results = []
 
-    for item in recent_folders
-        call add(results, { 'line': item, 'cmd': 'edit ' . item })
-    endfor
+    " for item in recent_folders
+        " call add(results, { 'line': item, 'cmd': 'edit ' . item })
+    " endfor
 
-    return results
-  endfunction
+    " return results
+  " endfunction
 
 " Sections to show
-let g:startify_lists = [
-    \ { 'type': function('s:workspace_mru'), 'header': ['   Workspace MRU'] },
-    \ { 'type': 'files',     'header': ['   MRU']            },
-    \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-    \ { 'type': 'sessions',  'header': ['   Sessions']       },
-    \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-    \ { 'type': 'commands',  'header': ['   Commands']       }
-    \ ]
+" let g:startify_lists = [
+    " \ { 'type': function('s:workspace_mru'), 'header': ['   Workspace MRU'] },
+    " \ { 'type': 'files',     'header': ['   MRU']            },
+    " \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+    " \ { 'type': 'sessions',  'header': ['   Sessions']       },
+    " \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+    " \ { 'type': 'commands',  'header': ['   Commands']       }
+    " \ ]
 
