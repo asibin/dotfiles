@@ -13,6 +13,7 @@ app_bindings = {
   { 'j', 'Joplin.app' },
   { 'c', 'Telegram' },
   { 'o', 'Microsoft Outlook' },
+  { 'r', 'Google Chrome' },
 }
 
 for i, app in ipairs(app_bindings) do
@@ -37,7 +38,7 @@ n:start()
 
 
 -- Bind hyper_keys + R to reload Hammerspoon config
-hs.hotkey.bind(hyper_keys, "R", function()
+hs.hotkey.bind(hyper_keys, "\\", function()
   hs.reload()
 end)
 hs.alert.show("Config loaded")
