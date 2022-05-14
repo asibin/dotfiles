@@ -88,6 +88,7 @@ apps=(
   "vlc"
   "webex"
   "wireshark"
+  "hugo"
 )
 
 printf "${BLUE}Add casks for brew${NOCOLOR}\n" 
