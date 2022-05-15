@@ -37,7 +37,7 @@ n:setCallback(networkChangedCallback)
 n:start()
 
 
--- Bind hyper_keys + R to reload Hammerspoon config
+-- Bind hyper_keys + \ to reload Hammerspoon config
 hs.hotkey.bind(hyper_keys, "\\", function()
   hs.reload()
 end)
