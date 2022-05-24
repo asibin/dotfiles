@@ -3,7 +3,7 @@ hyper_keys = {"cmd", "alt", "ctrl", "shift"}
 -- Application launchers
 app_bindings = {
   { 'q', 'iTerm' },
-  { 'w', 'Safari' },
+  { 'w', 'Brave Browser' },
   { 't', 'Postman' },
   { 'p', 'Enpass' },
   { 'm', 'Spotify' },

@@ -74,7 +74,7 @@ source <(limactl completion zsh)
 
 # Aliases
 alias vim=nvim
-alias cat=bat
+alias cat='bat -p'
 alias dev-python="wd workspace && cookiecutter git@gitlab.united.cloud:uc-devops/uc-cookiecutter-python.git"
 
 ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
