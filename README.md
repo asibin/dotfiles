@@ -15,7 +15,6 @@ Note that this repo is probably not usable out-of-the-box
 ### Assumptions
 
 - ~/workspace as workspace folder
-- neovim's startify workspace MRU folders function is hardcoded to ~/workspace
 - Apps that are installed are apps that I use or HAVE to use
  (I am looking at you Skype)
 - aliases are my own
@@ -27,7 +26,7 @@ Note that this repo is probably not usable out-of-the-box
 - Applications installed from brew
 - .zshrc config with Zgen, ohmyzsh, git completions, ncurses history,
   suggestions, etc.
-- .tmux.conf - vim motions compatible, one-dark themed, tmux-continuum,
+- .tmux.conf - vim motions compatible, one-dark themed,
   OS clipboard compatible, custom status bar with battery status
 - Neovim / vim config with vim-plug plugin manager
   - Themed
@@ -49,7 +48,7 @@ Note that this repo is probably not usable out-of-the-box
   - custom starify MRU list for workspace folders
 - Git config with global .gitignore
 - iterm2 customized one-dark theme
-- Hammerspoon & Karabiner configs with PublicIP spoon
+- Hammerspoon & Karabiner configs with [PublicIP](https://github.com/asibin/hammerspoon-spoon-PublicIP) spoon
 - shell script to setup everything
 - The Silver Searcher with ignore file
 
