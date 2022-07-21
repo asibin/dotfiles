@@ -83,12 +83,14 @@ apps=(
   "slack"
   "spotify"
   "steam"
-  "teamviewer" "telegram"
+  "teamviewer"
+  "telegram"
   "tunnelblick"
   "vlc"
   "webex"
   "wireshark"
-  "hugo"
+  "hugo",
+  "hiddenbar"
 )
 
 printf "${BLUE}Add casks for brew${NOCOLOR}\n" 
