@@ -77,7 +77,6 @@ source ~/.vault.config
 # Aliases
 alias vim=nvim
 alias cat='bat -p'
-alias dev-python="wd workspace && cookiecutter git@gitlab.united.cloud:uc-devops/uc-cookiecutter-python.git"
 alias idea="$HOME/.dotfiles/scripts/idea.sh"
 
 ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
