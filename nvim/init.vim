@@ -1,15 +1,11 @@
 set nocompatible
-
+                                               
 call plug#begin('~/.vim/plugins')
 
 " Sensible vim configuration everyone can agree on.
-Plug 'tpope/vim-sensible'
-
-" Essential plugins for collaboration and style.
-Plug 'editorconfig/editorconfig-vim' " Support editorconfig file.
+" Plug 'tpope/vim-sensible'
 
 " Plugins for colour schemes.
-Plug 'altercation/vim-colors-solarized'
 Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
 
@@ -37,10 +33,10 @@ Plug 'puremourning/vimspector'
 Plug 'tpope/vim-unimpaired'
 
 " Surround motions
-Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 
 " Git gutter icons
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 
 " FZF Vim Integration.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -53,10 +49,10 @@ Plug 'preservim/nerdcommenter'
 " Plug 'mhinz/vim-startify'
 
 " Nicer cursor, tmux interactions.
-Plug 'sjl/vitality.vim'
+" Plug 'sjl/vitality.vim'
 
 " Navigate seamlessly between vim and tmux splits 
-Plug 'christoomey/vim-tmux-navigator'
+" Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -140,7 +136,8 @@ endif
 " Theme
 syntax on
 " let g:onedark_color_overrides = {"comment_grey": { "gui": "#818998", "cterm": "170", "cterm16": "5" }}
-colorscheme onedark
+" colorscheme onedark
+colorscheme one
 
 " Swap
 set swapfile
@@ -165,18 +162,6 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " Install all language servers automatically
 let g:coc_global_extensions = ['coc-prettier', 'coc-html-css-support', 'coc-html', 'coc-eslint', 'coc-diagnostic', 'coc-browser', 'coc-yaml', 'coc-tsserver', 'coc-svg', 'coc-sql', 'coc-sh', 'coc-pyright', 'coc-pydocstring', 'coc-markdownlint', 'coc-json', 'coc-go', 'coc-docker', 'coc-css', 'coc-angular', '@yaegassy/coc-ansible', 'coc-git']
 
-" Map tab and shift tab to next/previous completion 
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || gsstline('.')[col - 1]  =~# '\s'
-endfunction
-
 " Map ctrl + space to trigger completion
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
@@ -187,6 +172,10 @@ endif
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use tab and shift + tab to navigate completion
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -239,10 +228,9 @@ endif
 
 " Bindings
 nnoremap <C-n> :NERDTree<CR>
-nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <leader>n :NERDTreeFocus<CR>
 map <leader>t :NERDTreeFind<cr> " Show the current file in NERDTree.
-" nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Config 
 let NERDTreeShowHidden=1 " Show or hide hidden files
@@ -250,7 +238,7 @@ let g:NERDTreeIgnore=['\.git$[[dir]]', 'node_modules$[[dir]]', '\.nyc_output$[[d
 let NERDTreeRespectWildIgnore=1 " Ignore the files in our 'wildignore' settings (see higher up in the file)
 
 " Close NERDTree when file is opened
-let NERDTreeQuitOnOpen=1
+" let NERDTreeQuitOnOpen=1
 
 " Get nerdtree to use nerdfonts
 let g:NERDTreeGitStatusUseNerdFonts = 1

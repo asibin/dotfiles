@@ -4,10 +4,10 @@
 	editor = nvim
 	pager = delta
 
-[includeIf "gitdir:~/workspace/"]
+[includeIf "gitdir:~/workspace/work/**"]
 	path = ~/.gitconfig-uc
 
-[includeIf "gitdir:~/workspace/personal/"]
+[includeIf "gitdir:~/workspace/personal/**"]
 	path = ~/.gitconfig-private-github
 
 [interactive]
