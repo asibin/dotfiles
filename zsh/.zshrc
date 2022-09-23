@@ -68,7 +68,6 @@ fi
 
 # Kubectl completion
 source <(kubectl completion zsh)
-source <(k3d completion zsh)
 source <(helm completion zsh)
 source <(limactl completion zsh)
 
