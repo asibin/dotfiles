@@ -82,9 +82,6 @@ Note that this repo is probably not usable out-of-the-box
  Mac's built-in keyboard (for German / EU style keyboard)
 - Binding `CAPS LOCK` to `COMMAND + CTRL + OPTION + SHIFT` to be used as HYPER
  key for Hammerspoon
-- Binding for middle click (mouse3) to `CMD + w`
-- Binding for mouse4 to `CMD + [`
-- Binding for mouse5 to `CMD + ]`
 
 ## Usage
 
@@ -98,6 +95,6 @@ cd ~/.dotfiles
 
 ## Known issues
 
-- TAB sometimes throws error in NeoVim when there are no completions
- and you press TAB multiple times, will investigate
+- ~~TAB sometimes throws error in NeoVim when there are no completions
+ and you press TAB multiple times, will investigate~~
 - Karabiner symlink gets overwritten by Karabiner. Needs more research.
