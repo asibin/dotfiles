@@ -2,15 +2,8 @@ set nocompatible
                                                
 call plug#begin('~/.vim/plugins')
 
-" Sensible vim configuration everyone can agree on.
-" Plug 'tpope/vim-sensible'
-
-" Plugins for colour schemes.
-Plug 'joshdick/onedark.vim'
+" Plugins for color schemes.
 Plug 'rakr/vim-one'
-
-" Polyglot
-Plug 'sheerun/vim-polyglot'
 
 " Nerdtree file explorer and file icons in NerdTree
 Plug 'scrooloose/nerdtree'
@@ -33,10 +26,10 @@ Plug 'puremourning/vimspector'
 Plug 'tpope/vim-unimpaired'
 
 " Surround motions
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
-" Git gutter icons
-" Plug 'airblade/vim-gitgutter'
+" Match HTML tags
+Plug 'gregsexton/matchtag'
 
 " FZF Vim Integration.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -48,11 +41,8 @@ Plug 'preservim/nerdcommenter'
 " More usefull start screen
 " Plug 'mhinz/vim-startify'
 
-" Nicer cursor, tmux interactions.
-" Plug 'sjl/vitality.vim'
-
 " Navigate seamlessly between vim and tmux splits 
-" Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -68,6 +58,9 @@ set updatetime=300  " lower updatetime to make things snappier
 " set cmdheight=2     " Better display for messages 
 set shortmess+=c    " don't give ins-completion-menu messages.
 
+" Map SPACE as <leader>
+let mapleader = ' '
+
 " Enable plugins per filetype
 filetype plugin on
 
@@ -79,8 +72,8 @@ filetype plugin on
 :ino <C-c> <Esc>
 
 " Highlight the current line.
-:autocmd InsertEnter * set cul
-:autocmd InsertLeave * set nocul
+" :autocmd InsertEnter * set cul
+" :autocmd InsertLeave * set nocul
 
 " Break bad habits - no arrow keys!
 " noremap <Up> <NOP>
@@ -99,7 +92,7 @@ augroup auto_toggle_relative_linenumbers
     autocmd InsertLeave * :set number relativenumber
 augroup end
 
-" Highlight matches
+" Highlight search matches
 set hlsearch        
 
 " Once we are done finding things and we start to edit we don't need highlights
@@ -135,7 +128,7 @@ endif
 
 " Theme
 syntax on
-" let g:onedark_color_overrides = {"comment_grey": { "gui": "#818998", "cterm": "170", "cterm16": "5" }}
+let g:onedark_color_overrides = {"comment_grey": { "gui": "#818998", "cterm": "170", "cterm16": "5" }}
 " colorscheme onedark
 colorscheme one
 
@@ -159,10 +152,12 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " --- Coc ---
 
+set signcolumn=yes
+
 " Install all language servers automatically
 let g:coc_global_extensions = ['coc-prettier', 'coc-html-css-support', 'coc-html', 'coc-eslint', 'coc-diagnostic', 'coc-browser', 'coc-yaml', 'coc-tsserver', 'coc-svg', 'coc-sql', 'coc-sh', 'coc-pyright', 'coc-pydocstring', 'coc-markdownlint', 'coc-json', 'coc-go', 'coc-docker', 'coc-css', 'coc-angular', '@yaegassy/coc-ansible', 'coc-git']
 
-" Map ctrl + space to trigger completion
+" Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
 else
@@ -171,7 +166,9 @@ endif
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use tab and shift + tab to navigate completion
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
@@ -189,15 +186,13 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
     call CocActionAsync('doHover')
   else
-    execute '!' . &keywordprg . " " . expand('<cword>')
+    call feedkeys('K', 'in')
   endif
 endfunction
 
@@ -208,6 +203,10 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ac  <Plug>(coc-codeaction-line)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Formatting selected code.
+xmap <leader>w  <Plug>(coc-format-selected)
+nmap <leader>w  <Plug>(coc-format-selected)
 
 " Language - file type mappings
 let g:coc_filetype_map = {
