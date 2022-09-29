@@ -10,10 +10,10 @@ app_bindings = {
   { 's', 'Slack' },
   { 'd', 'IntelliJ IDEA' },
   { 'f', 'Finder' },
-  { 'j', 'Joplin.app' },
   { 'c', 'Telegram' },
   { 'o', 'Microsoft Outlook' },
   { 'r', 'Google Chrome' },
+  { 'v', 'Microsoft Teams'},
 }
 
 for i, app in ipairs(app_bindings) do
