@@ -9,8 +9,6 @@ fi
 source "${HOME}/.zgen/zgen.zsh"
 
 if ! zgen saved; then
-    echo "Creating a zgen save"
-
     zgen oh-my-zsh
 
     # plugins
@@ -57,6 +55,9 @@ export PATH="/usr/local/sbin:$PATH"
 # Node 16 binary
 export PATH="/usr/local/opt/node@16/bin:$PATH"
 
+# Rancher desktop binaries
+export PATH="$HOME/.rd/bin:$PATH"
+
 # Set default docker platform
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
@@ -67,7 +68,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # Kubectl completion
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 source <(helm completion zsh)
 source <(limactl completion zsh)
 
@@ -77,5 +78,5 @@ source ~/.vault.config
 alias vim=nvim
 alias cat='bat -p'
 alias idea="$HOME/.dotfiles/scripts/idea.sh"
+# alias docker='nerdctl'
 
-ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)

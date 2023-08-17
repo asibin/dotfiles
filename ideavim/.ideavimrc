@@ -1,5 +1,5 @@
 """ Map leader to space ---------------------
-let mapleader="\"
+let mapleader=" "
 
 """ Plugins  --------------------------------
 set surround
@@ -24,7 +24,7 @@ set noerrorbells
 " set relativenumber
 
 """ Add - character to word characters
-set iskeyword+=-
+""" set iskeyword+=-
 
 """ Idea specific settings ------------------
 set ideajoin

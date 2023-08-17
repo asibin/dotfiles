@@ -38,6 +38,9 @@ Plug 'junegunn/fzf.vim'
 " Add easy language aware commenting
 Plug 'preservim/nerdcommenter'
 
+" Show indent lines 
+Plug 'Yggdroot/indentLine'
+
 " More usefull start screen
 " Plug 'mhinz/vim-startify'
 
@@ -55,7 +58,7 @@ set showcmd         " show command in bottom bar
 set cursorline      " highlight current line
 set wildmenu        " nicer tab completion 
 set updatetime=300  " lower updatetime to make things snappier
-" set cmdheight=2     " Better display for messages 
+ " set cmdheight=3     " Better display for messages 
 set shortmess+=c    " don't give ins-completion-menu messages.
 
 " Map SPACE as <leader>
@@ -217,6 +220,9 @@ let g:coc_filetype_map = {
 
 " Show the buffers in the tabline.
 let g:airline#extensions#tabline#enabled = 1
+
+" let g:airline_section_z = '%p%%%#__accent_bold#%{g:airline_symbols.linenr}%l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__#%#__accent_bold#%{g:airline_symbols.colnr}%v%#__restore__#'
+
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
