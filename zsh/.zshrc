@@ -58,8 +58,20 @@ export PATH="/usr/local/opt/node@16/bin:$PATH"
 # Rancher desktop binaries
 export PATH="$HOME/.rd/bin:$PATH"
 
+# Kubectl package manager Krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 # Set default docker platform
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# FZF default command
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+# On history search use exact matches by default and don't sort results (they are chronological)
+export FZF_CTRL_R_OPTS="--no-sort --exact"
+
+
+export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 
 # Pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -77,6 +89,10 @@ source ~/.vault.config
 # Aliases
 alias vim=nvim
 alias cat='bat -p'
-alias idea="$HOME/.dotfiles/scripts/idea.sh"
+alias ll='ls -lah'
+alias lln='ls -latrh'
+# alias idea="$HOME/.dotfiles/scripts/idea.sh"
 # alias docker='nerdctl'
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

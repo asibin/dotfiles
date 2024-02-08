@@ -1,3 +1,3 @@
 #!/bin/sh
 
-open -na "IntelliJ IDEA.app" --args "$@"
+open -na /Users/sibin/Library/Application\ Support/JetBrains/Toolbox/scripts/idea --args "$@"

@@ -43,7 +43,8 @@ map <leader>z <Action>(ToggleDistractionFreeMode)
 
 map <leader>t <Action>(SelectInProjectView)
 map <leader>a <Action>(Annotate)
-map <leader>h <Action>(Vcs.ShowTabbedFileHistory)
+map <leader>h <Action>(RecentFiles)
+map <leader>g <Action>(Vcs.ShowTabbedFileHistory)
 map <S-Space> <Action>(GotoNextError)
 
 map <leader>b <Action>(ToggleLineBreakpoint)

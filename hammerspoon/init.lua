@@ -7,8 +7,9 @@ app_bindings = {
 	{ "t", "Postman" },
 	{ "p", "Enpass" },
 	{ "m", "Spotify" },
+	{ "a", "Safari" },
 	{ "s", "Slack" },
-	{ "d", "IntelliJ IDEA" },
+	{ "d", "IntelliJ IDEA Ultimate" },
 	{ "f", "Finder" },
 	{ "c", "Telegram" },
 	{ "o", "Microsoft Outlook" },
@@ -56,6 +57,8 @@ n:start()
 hs.hotkey.bind(hyper_key, "\\", function()
 	hs.reload()
 end)
+
+-- hs.loadSpoon("LimaControl")
 
 hs.alert.show("Config loaded")
 hs.hotkey.showHotkeys(hyper_key, "'")
