@@ -68,11 +68,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# Kubectl completion
-# source <(kubectl completion zsh)
-# source <(helm completion zsh)
-# source <(limactl completion zsh)
-
 source ~/.vault.config
 
 export _ZO_ECHO=1
