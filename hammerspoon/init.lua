@@ -3,10 +3,11 @@ hyper_key = { "cmd", "alt", "ctrl", "shift" }
 -- Application launchers
 app_bindings = {
 	{ "e", "iTerm" },
-	{ "w", "Arc" },
+	{ "w", "Google Chrome" },
 	{ "t", "Postman" },
 	{ "p", "Enpass" },
 	{ "m", "Spotify" },
+	{ "n", "Sublime Text" },
 	{ "a", "Safari" },
 	{ "s", "Slack" },
 	{ "d", "IntelliJ IDEA Ultimate" },
@@ -17,11 +18,11 @@ app_bindings = {
 	{ "v", "Microsoft Teams" },
 }
 
-for i, app in ipairs(app_bindings) do
-	hs.hotkey.bind(hyper_key, app[1], app[2], function()
-		hs.application.launchOrFocus(app[2])
-	end)
-end
+-- for i, app in ipairs(app_bindings) do
+-- 	hs.hotkey.bind(hyper_key, app[1], app[2], function()
+-- 		hs.application.launchOrFocus(app[2])
+-- 	end)
+-- end
 
 -- Load PublicIP spoon and watch IPv4 address changes
 hs.loadSpoon("PublicIP")
