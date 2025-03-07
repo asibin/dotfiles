@@ -46,7 +46,8 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 
 # Rancher desktop binaries
-export PATH="$HOME/.rd/bin:$PATH"
+# export PATH="$HOME/.rd/bin:$PATH"
+export PATH="/opt/homebrew/opt/kubernetes-cli@1.30/bin:$PATH"
 
 # Kubectl package manager Krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
