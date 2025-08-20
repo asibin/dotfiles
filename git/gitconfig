@@ -7,6 +7,9 @@
 [includeIf "gitdir:~/workspace/work/**"]
 	path = ~/.gitconfig-uc
 
+[includeIf "gitdir:~/workspace/netronix/**"]
+	path = ~/.gitconfig-netronix
+
 [includeIf "gitdir:~/workspace/personal/**"]
 	path = ~/.gitconfig-private-github
 
