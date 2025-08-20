@@ -36,3 +36,31 @@ hs.hotkey.bind(hyper_key, "\\", function()
 end)
 
 -- hs.loadSpoon("LimaControl")
+
+-- Keybindings (customize to your liking)
+hs.hotkey.bind({ "ctrl", "alt", "cmd", "shift" }, "1", function()
+	focusSafariWindow("Work")
+end)
+
+hs.hotkey.bind({ "ctrl", "alt", "cmd", "shift" }, "2", function()
+	focusSafariWindow("Personal")
+end)
+
+-- Function to focus a Safari window based on partial title match - not great not terrible
+function focusSafariWindow(keyword)
+	local safari = hs.application.get("Safari")
+	if not safari then
+		hs.alert("Safari is not running")
+		return
+	end
+
+	local windows = safari:allWindows()
+	for _, win in ipairs(windows) do
+		if win:title():find(keyword) then
+			win:focus()
+			return
+		end
+	end
+
+	hs.alert("No Safari window found with: " .. keyword)
+end
