@@ -1,1 +1,4 @@
 git/gitconfig-*
+git/.gitconfig-netronix
+git/.gitconfig-private-github
+git/.gitconfig-uc
