@@ -46,7 +46,6 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 
 # Rancher desktop binaries
-# export PATH="$HOME/.rd/bin:$PATH"
 export PATH="/opt/homebrew/opt/kubernetes-cli@1.30/bin:$PATH"
 
 # Kubectl package manager Krew
@@ -71,9 +70,11 @@ fi
 
 source ~/.vault.config
 
+# Init zoxide
 export _ZO_ECHO=1
 eval "$(zoxide init zsh)"
 
+# Yazi switch to directory when exiting
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -93,6 +94,10 @@ alias lln='ls -latrh'
 alias kp='k9s --kubeconfig ~/.kube/config-personal '
 alias kps='source ~/.dotfiles/scripts/k8s_personal_config_switcher.sh'
 alias ks='source ~/.dotfiles/scripts/k8s_config_switcher.sh'
+
+alias f='spf'
+
+alias r53="~/scripts/aws-r53-record-fetcher/get_r53_records_fzf.sh"
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
