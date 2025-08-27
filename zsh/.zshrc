@@ -95,9 +95,17 @@ alias kp='k9s --kubeconfig ~/.kube/config-personal '
 alias kps='source ~/.dotfiles/scripts/k8s_personal_config_switcher.sh'
 alias ks='source ~/.dotfiles/scripts/k8s_config_switcher.sh'
 
-alias f='spf'
+# AWS Route53 domain record fetcher
+alias dnsrecord="~/scripts/aws-r53-record-fetcher/get_r53_records_fzf.sh"
 
-alias r53="~/scripts/aws-r53-record-fetcher/get_r53_records_fzf.sh"
+# Use zoxide as cd
+alias cd=z
+
+# Yazi as f and Superfile as F
+alias F='spf'
+alias f='y'
+
+alias G='lazygit'
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
