@@ -83,6 +83,12 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+envload() {
+  set -o allexport
+  source "$1"
+  set +o allexport
+}
+
 # Aliases
 alias vim=nvim
 alias cat='bat -p'
