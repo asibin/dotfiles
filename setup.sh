@@ -13,8 +13,8 @@ NOCOLOR='\e[0m'
 
 printf "${BLUE}Checking if homebrew is installed${NOCOLOR}\n"
 if ! command -v brew &>/dev/null; then
-  printf "${GREEN}Homebrew not found, installing...${NOCOLOR}\n"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	printf "${GREEN}Homebrew not found, installing...${NOCOLOR}\n"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 printf "${BLUE}Checking if homebrew is installed: ${NOCOLOR}${GREEN}OK${NC}\n"
 
@@ -34,15 +34,15 @@ printf "${BLUE}Add Yazi plugins: ${NOCOLOR}${GREEN}OK${NC}\n"
 # GIT
 printf "${BLUE}Setup Git secret configurations${NOCOLOR}\n"
 if [ -f ~/.dotfiles/git/gitconfig-private-github ]; then
-  ln -sf ~/.dotfiles/git/gitconfig-private-github ~/.gitconfig-private-github
+	ln -sf ~/.dotfiles/git/gitconfig-private-github ~/.gitconfig-private-github
 fi
 
 if [ -f ~/.dotfiles/git/gitconfig-uc ]; then
-  ln -sf ~/.dotfiles/git/gitconfig-uc ~/.gitconfig-uc
+	ln -sf ~/.dotfiles/git/gitconfig-uc ~/.gitconfig-uc
 fi
 
 if [ -f ~/.dotfiles/git/gitconfig-netronix ]; then
-  ln -sf ~/.dotfiles/git/gitconfig-netronix ~/.gitconfig-netronix
+	ln -sf ~/.dotfiles/git/gitconfig-netronix ~/.gitconfig-netronix
 fi
 printf "${BLUE}Setup Git configuration: ${NOCOLOR}${GREEN}OK${NC}\n"
 
