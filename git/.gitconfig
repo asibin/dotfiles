@@ -4,7 +4,7 @@
 	editor = nvim
 	pager = delta
 
-[includeIf "gitdir:~/workspace/work/**"]
+[includeIf "gitdir:~/workspace/uc/**"]
 	path = ~/.gitconfig-uc
 
 [includeIf "gitdir:~/workspace/netronix/**"]
