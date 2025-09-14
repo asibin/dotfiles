@@ -1,4 +1,11 @@
+.DS_Store
 git/gitconfig-*
 git/.gitconfig-netronix
 git/.gitconfig-private-github
 git/.gitconfig-uc
+hammerspoon/.hammerspoon/Spoons/
+superfile/Library/Application Support/superfile/theme
+superfile/Library/Application Support/superfile
+tmux/.tmux/plugins
+yazi/.config/yazi/flavors
+yazi/.config/yazi/plugins
