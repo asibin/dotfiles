@@ -7,17 +7,19 @@ export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
 export NVM_LAZY_LOAD_EXTRA_COMMANDS=('vim', 'nvim')
 
-# load zgen
-source "${HOME}/.zgen/zgen.zsh"
+# load zgenom
+source "${HOME}/.zgenom/zgenom.zsh"
 
-if ! zgen saved; then
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-autosuggestions
-    zgen load lukechilds/zsh-nvm
+zgenom autoupdate
 
-    zgen load romkatv/powerlevel10k powerlevel10k
+if ! zgenom saved; then
+    zgenom load zsh-users/zsh-syntax-highlighting
+    zgenom load zsh-users/zsh-autosuggestions
+    zgenom load lukechilds/zsh-nvm
 
-    zgen save
+    zgenom load romkatv/powerlevel10k powerlevel10k
+
+    zgenom save
 fi
 
 # Set NeoVim as default editor
