@@ -63,6 +63,10 @@ envload() {
   set +o allexport
 }
 
+workon() {
+  source .venv/bin/activate
+}
+
 # Aliases
 alias vim=nvim
 alias cat='bat -p'
