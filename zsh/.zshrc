@@ -36,6 +36,7 @@ source <(fzf --zsh)
 
 # FZF default command
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='--tmux 80% --cycle'
 
 # On history search use exact matches by default and don't sort results (they are chronological)
 export FZF_CTRL_R_OPTS="--no-sort --exact"
