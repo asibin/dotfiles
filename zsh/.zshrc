@@ -2,6 +2,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export XDG_CACHE_HOME="${HOME}/.cache"
+
+# Make command history larger
+export HISTSIZE=110000
+export SAVEHIST=100000
+
+# Removes oldest command duplicate from history first
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Automatically cd if command is not a command and is equal to directory name
+setopt AUTO_CD
+
+# Append history as soon as command is ran, all shells share same history
+setopt SHARE_HISTORY
+
+
 # Lazy load NVM and AUTO USE when it is loaded, needs to be specified before plugin load
 export NVM_LAZY_LOAD=true
 export NVM_AUTO_USE=true
