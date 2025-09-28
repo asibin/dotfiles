@@ -76,12 +76,14 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# Loads ENV files without exports, expects filename as first argument
 envload() {
   set -o allexport
   source "$1"
   set +o allexport
 }
 
+# Sources virtualenv in current path
 workon() {
   source .venv/bin/activate
 }
