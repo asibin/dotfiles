@@ -32,6 +32,7 @@ if ! zgenom saved; then
     zgenom load zsh-users/zsh-syntax-highlighting
     zgenom load zsh-users/zsh-autosuggestions
     zgenom load lukechilds/zsh-nvm
+    zgenom load Aloxaf/fzf-tab
 
     zgenom load romkatv/powerlevel10k powerlevel10k
 
@@ -41,6 +42,8 @@ fi
 # Set NeoVim as default editor
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 export PATH="/usr/local/sbin:$PATH"
 
