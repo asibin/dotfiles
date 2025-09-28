@@ -1,9 +1,9 @@
 #!/bin/zsh
 
-vault token lookup &>/dev/null
+bao token lookup &>/dev/null
 if [ $? -ne 0 ]; then
   echo "Vault token is invalid or not found. Logging in..."
-  vault login -method=oidc &>/dev/null
+  bao login -method=oidc &>/dev/null
 
   if [ $? -ne 0 ]; then
     echo "Failed to log in to Vault. Exiting..."
@@ -12,7 +12,7 @@ if [ $? -ne 0 ]; then
   fi
 fi
 
-keys_list=$(vault kv list -format=json $VAULT_KUBECONFIGS_PATH 2>/dev/null | jq -r '.[]')
+keys_list=$(bao kv list -format=json $VAULT_KUBECONFIGS_PATH 2>/dev/null | jq -r '.[]')
 
 if [ -z "$keys_list" ]; then
   echo "Failed to list keys or no key selected. Vault logged in? VPN connected? Exiting..."
@@ -22,7 +22,7 @@ fi
 
 selected_key=$(echo $keys_list | fzf)
 
-config=$(vault kv get -field=config $VAULT_KUBECONFIGS_PATH/$selected_key 2>/dev/null) 
+config=$(bao kv get -field=config $VAULT_KUBECONFIGS_PATH/$selected_key 2>/dev/null) 
 
 if [ $? -ne 0 ] || [ -z "$config" ]; then
   echo "Failed to fetch configuration from Vault. Exiting..."
