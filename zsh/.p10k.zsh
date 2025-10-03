@@ -48,7 +48,7 @@
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    vcs                     # git status
+    # vcs                     # git status
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     # pyenv                   # python environment (https://github.com/pyenv/pyenv)
