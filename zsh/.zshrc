@@ -4,6 +4,9 @@ fi
 
 export XDG_CACHE_HOME="${HOME}/.cache"
 
+# setup zsh vi mode
+bindkey -v
+
 # Make command history larger
 export HISTSIZE=110000
 export SAVEHIST=100000
@@ -38,6 +41,9 @@ if ! zgenom saved; then
 
     zgenom save
 fi
+
+# fzf-tab init
+zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
 
 # Set NeoVim as default editor
 export EDITOR="nvim"
@@ -90,12 +96,15 @@ workon() {
 
 # Aliases
 alias vim=nvim
+alias v=nvim
 alias cat='bat -p'
 alias ls='ls --color'
 alias l='ls -lah --color'
 alias ll='ls -lah'
 alias lln='ls -latrh'
 
+alias k='kubectl'
+alias ku='k9s'
 alias kp='k9s --kubeconfig ~/.kube/config-personal '
 alias kps='source ~/.dotfiles/scripts/k8s_personal_config_switcher.sh'
 alias ks='source ~/.dotfiles/scripts/k8s_config_switcher.sh'
