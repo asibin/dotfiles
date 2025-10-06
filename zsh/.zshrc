@@ -13,13 +13,15 @@ export SAVEHIST=100000
 
 # Removes oldest command duplicate from history first
 setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
 
 # Automatically cd if command is not a command and is equal to directory name
 setopt AUTO_CD
 
 # Append history as soon as command is ran, all shells share same history
 setopt SHARE_HISTORY
-
+setopt INC_APPEND_HISTORY
 
 # Lazy load NVM and AUTO USE when it is loaded, needs to be specified before plugin load
 export NVM_LAZY_LOAD=true
