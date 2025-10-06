@@ -34,9 +34,9 @@ This repo reflects my personal development setup and preferences. It's made publ
 
 ### Applications (via Homebrew Cask)
 
-- **Development**: iTerm2, Kitty, IntelliJ IDEA, Sublime Text, Claude Code
+- **Development**: Kitty, IntelliJ IDEA, Sublime Text, Claude Code
 - **Productivity**: Raycast, Hammerspoon, HiddenBar, Magnet
-- **Communication**: Slack, Signal, Telegram
+- **Communication**: Slack, Telegram
 - **Utilities**: Enpass, Dropbox, Joplin
 
 ### Configuration Files (managed via Stow)
