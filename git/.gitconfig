@@ -13,6 +13,9 @@
 [includeIf "gitdir:~/workspace/personal/**"]
 	path = ~/.gitconfig-private-github
 
+[includeIf "gitdir:~/.dotfiles/"]
+	path = ~/.gitconfig-private-github
+
 [interactive]
 	diffFilter = delta --color-only
 
