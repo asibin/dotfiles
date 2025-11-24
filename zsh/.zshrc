@@ -1,7 +1,8 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
+export STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"
 export XDG_CACHE_HOME="${HOME}/.cache"
 
 # setup zsh vi mode
@@ -39,7 +40,7 @@ if ! zgenom saved; then
     zgenom load lukechilds/zsh-nvm
     zgenom load Aloxaf/fzf-tab
 
-    zgenom load romkatv/powerlevel10k powerlevel10k
+    # zgenom load romkatv/powerlevel10k powerlevel10k
 
     zgenom save
 fi
@@ -89,6 +90,9 @@ envload() {
   set -o allexport
   source "$1"
   set +o allexport
+  
+  echo "Loaded environment variables:"
+  grep -v '^#' "$1" | grep -v '^[[:space:]]*$' | cut -d'=' -f1 | sed 's/^/  /'
 }
 
 # Sources virtualenv in current path
@@ -120,4 +124,4 @@ alias f='y'
 
 alias G='lazygit'
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(starship init zsh)"
