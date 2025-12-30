@@ -1,8 +1,7 @@
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-export STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"
 export XDG_CACHE_HOME="${HOME}/.cache"
 
 # setup zsh vi mode
@@ -40,13 +39,13 @@ if ! zgenom saved; then
     zgenom load lukechilds/zsh-nvm
     zgenom load Aloxaf/fzf-tab
 
-    # zgenom load romkatv/powerlevel10k powerlevel10k
+    zgenom load romkatv/powerlevel10k powerlevel10k
 
     zgenom save
 fi
 
 # fzf-tab init
-zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 # Set NeoVim as default editor
 export EDITOR="nvim"
@@ -54,7 +53,7 @@ export VISUAL="nvim"
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/Users/sibin/.local/bin:/usr/local/sbin:$PATH"
 
 # Set default docker platform
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
@@ -112,8 +111,8 @@ alias lln='ls -latrh'
 alias k='kubectl'
 alias ku='k9s'
 alias kp='k9s --kubeconfig ~/.kube/config-personal '
-alias kps='source ~/.dotfiles/scripts/k8s_personal_config_switcher.sh'
-alias ks='source ~/.dotfiles/scripts/k8s_config_switcher.sh'
+alias kps='source ~/scripts/k8s_personal_config_switcher.sh'
+alias ks='source ~/scripts/k8s_config_switcher.sh'
 
 # AWS Route53 domain record fetcher
 alias dnsrecord="~/scripts/aws-r53-record-fetcher/get_r53_records_fzf.sh"
@@ -124,4 +123,4 @@ alias f='y'
 
 alias G='lazygit'
 
-eval "$(starship init zsh)"
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
