@@ -110,8 +110,6 @@ alias lln='ls -latrh'
 
 alias k='kubectl'
 alias ku='k9s'
-alias kp='k9s --kubeconfig ~/.kube/config-personal '
-alias kps='source ~/scripts/k8s_personal_config_switcher.sh'
 alias ks='source ~/scripts/k8s_config_switcher.sh'
 
 # AWS Route53 domain record fetcher
