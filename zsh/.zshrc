@@ -120,5 +120,6 @@ alias F='spf'
 alias f='y'
 
 alias G='lazygit'
+alias db='sqlit'
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
