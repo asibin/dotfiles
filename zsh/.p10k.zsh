@@ -48,7 +48,7 @@
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
-    # vcs                     # git status
+    vcs                     # git status
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     # pyenv                   # python environment (https://github.com/pyenv/pyenv)
@@ -108,7 +108,7 @@
     # taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
     # per_directory_history   # Oh My Zsh per-directory-history local/global indicator
     # cpu_arch              # CPU architecture
-    # time                  # current time
+    time                  # current time
     # =========================[ Line #2 ]=========================
     # newline
     # proxy                 # system-wide http/https/ftp proxy
